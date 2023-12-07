@@ -4,6 +4,9 @@ import phone from "../Asset/Phone.svg";
 import LandingPage from "./LandingPage";
 import Content2 from "./Content2";
 import Button from "./Button";
+import NavList from "./NavList";
+import DropDown from "./DropDown";
+import Content3 from "./Content3";
 
 const NavBar = () => {
   return (
@@ -17,26 +20,22 @@ const NavBar = () => {
           </h1>
         </div>
         <div>
-          <ul className="flex gap-5 text-lg">
-            <li className="text-[#39DB4A]">Home</li>
-            <li>
-              <select name="cars" id="cars">
-                <option value="volvo">Menu</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-            </li>
-            <li>About Us</li>
-            <li>
-              <select name="cars" id="cars">
-                <option value="volvo">Services</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-            </li>
-            <li>Offers</li>
+          <ul className="flex gap-8">
+            <NavList link={"Home"} style={"text-[#39DB4A]"} />
+            <DropDown
+              dropdown={"Menu"}
+              dropdownlist1={"Order"}
+              dropdownlist2={"Review"}
+              dropdownlist3={"Payment"}
+            />
+            <NavList link={"About Us"} />
+            <DropDown
+              dropdown={"Services"}
+              dropdownlist1={"Career"}
+              dropdownlist2={"We make you feel fly"}
+              dropdownlist3={"Call Us"}
+            />
+            <NavList link={"Offer"} />
           </ul>
         </div>
         <div className="flex gap-6">
@@ -50,6 +49,9 @@ const NavBar = () => {
       </div>
       <div>
         <Content2 />
+      </div>
+      <div>
+        <Content3 />
       </div>
     </div>
   );
